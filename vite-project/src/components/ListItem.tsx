@@ -1,16 +1,14 @@
-interface Props {
-  city: string;
-  index: number;
-}
-
-function ListItem({ city, index }: Props) {
-  const handleClick = () => {
-    alert(`${city} at index ${index} was clicked`);
-  };
-
+function ListItem(listItem: ListItemParameter) {
   return (
-    <li onClick={() => handleClick()} className="list-group-item">
-      {city}
+    <li
+      onClick={() => listItem.onClick(listItem.index)}
+      className={
+        listItem.selectedIndex === listItem.index
+          ? "list-group-item active"
+          : "list-group-item"
+      }
+    >
+      {listItem.city}
     </li>
   );
 }
