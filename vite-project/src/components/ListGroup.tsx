@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ListItem from "./ListItem";
+import { ListGroupParms } from "../types/Types";
 
 function ListGroup(listGroup: ListGroupParms) {
   const [selectedIndex, setSelectedIndex] = useState(-1);

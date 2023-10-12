@@ -1,3 +1,5 @@
+import { ListItemParameter } from "../types/Types";
+
 function ListItem(listItem: ListItemParameter) {
   return (
     <li
