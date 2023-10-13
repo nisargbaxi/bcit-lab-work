@@ -4,13 +4,14 @@ import { Header } from "./components/Header";
 import { useState } from "react";
 
 function App() {
-  // Retrieve assignments on init only once, not on every render:
-  const initialHistory = (): Assignment[] => {
+  const initializeAssignmentDb = (): Assignment[] => {
     const json = localStorage.getItem("assignmentDb") ?? "[]";
     return JSON.parse(json) as Assignment[];
   };
 
-  const [assignments, setAssignments] = useState<Assignment[]>(initialHistory);
+  const [assignments, setAssignments] = useState<Assignment[]>(
+    initializeAssignmentDb
+  );
 
   const addAssignment = (name: string) => {
     const existingAssignment = assignments.filter(
@@ -18,6 +19,7 @@ function App() {
     ).length;
     if (existingAssignment > 0) {
       alert("Assignment already exist with name : " + name);
+      return;
     }
     setAssignments([{ name: name, completed: false }, ...assignments]);
     localStorage.setItem(

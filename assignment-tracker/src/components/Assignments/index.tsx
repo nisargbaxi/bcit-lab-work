@@ -44,6 +44,7 @@ export function Assignments({
             />
           );
         })}
+        {assignmentsList.length == 0 && <p>No assignments available.</p>}
       </div>
     </section>
   );
