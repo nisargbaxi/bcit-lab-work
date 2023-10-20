@@ -60,7 +60,7 @@ export function Header({ handleSubmit }: Props) {
         </button>
         <div
           className={styles.dayPickerBox}
-          onBlur={(e) => {
+          onBlur={() => {
             setDatePickerState(!isDatePickerOpen);
           }}
         >
