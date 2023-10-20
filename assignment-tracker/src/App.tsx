@@ -13,7 +13,7 @@ function App() {
     initializeAssignmentDb
   );
 
-  const addAssignment = (name: string) => {
+  const addAssignment = (name: string, dueDate?: Date) => {
     const existingAssignment = assignments.filter(
       (item) => item.name.toLowerCase() == name.toLocaleLowerCase()
     ).length;
@@ -21,10 +21,16 @@ function App() {
       alert("Assignment already exist with name : " + name);
       return;
     }
-    setAssignments([{ name: name, completed: false }, ...assignments]);
+    setAssignments([
+      { name: name, completed: false, dueDate: dueDate },
+      ...assignments,
+    ]);
     localStorage.setItem(
       "assignmentDb",
-      JSON.stringify([{ name: name, completed: false }, ...assignments])
+      JSON.stringify([
+        { name: name, completed: false, dueDate: dueDate },
+        ...assignments,
+      ])
     );
   };
 

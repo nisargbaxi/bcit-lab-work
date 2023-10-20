@@ -18,7 +18,7 @@
   padding: 0 1rem;
 }
 
-.newAssignmentForm input {
+.formInput {
   height: 100%;
   flex: 1;
   color: #fff;
@@ -29,11 +29,11 @@
   font-size: 16px;
 }
 
-.newAssignmentForm input::placeholder {
+.formInput input::placeholder {
   color: #808080;
 }
 
-.newAssignmentForm button {
+.primaryButton {
   height: 100%;
   padding: 0 16px;
   background: #8284fa;
@@ -47,7 +47,16 @@
   font-size: 14px;
 }
 
-.newAssignmentForm button:disabled {
+.primaryButton:disabled {
   background: lightgray;
   cursor: not-allowed;
+}
+
+.dayPickerBox {
+  position: absolute;
+  background-color: black;
+  border-radius: 20px;
+  margin-left: 88%;
+  margin-top: 55px;
+  border-color: white;
 }
